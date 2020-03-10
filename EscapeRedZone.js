@@ -138,8 +138,8 @@ function preload() {
   cool=loadImage("various/cool_tr.png", "png");
   train=loadImage("various/train_tr.png", "png");
   trav=loadImage("various/trav_tr.png" ,"png");
-  crocesmall=loadImage("various/croceross_tr.png", "png");
-  croce=loadImage("various/croceross_tr.png", "png");
+  crocesmall=loadImage("various/crocerossa_tr.png", "png");
+  croce=loadImage("various/crocerossa_tr.png", "png");
 //train=loadImage("https://i.imgur.com/lBvflQH.png", "png");
 //trav=loadImage("https://i.imgur.com/nRWWulT.png", "png");
 //croce=loadImage("https://i.imgur.com/7uc3O88.png", "png");
