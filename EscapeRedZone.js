@@ -81,7 +81,7 @@ class Player {
       this.vy=2*sin(th);
     }
     this.accumx+=this.vx*dx;
-    this.accumy+=this.vx*dy;
+    this.accumy+=this.vy*dy;
     this.mex=int(this.accumx);
     this.mey=int(this.accumy);
     this.Update();
