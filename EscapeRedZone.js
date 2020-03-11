@@ -102,7 +102,7 @@ class Player {
     }
     if (this.mey>=Nx) {
       this.mey=Nx-1; 
-      this.vx=-1*this.vx;
+      this.vy=-1*this.vx;
     }
     if (this.mex<0) {
       this.mex=0; 
@@ -110,7 +110,7 @@ class Player {
     }
     if (this.mey<0) {
       this.mey=0;
-      this.vx=-1*this.vx;
+      this.vy=-1*this.vx;
     }
 
     this.pos.x=this.mex;
