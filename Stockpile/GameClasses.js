@@ -54,14 +54,15 @@ constructor(kind, n, im){
    this.pos=new Point(0, 0);
    im.resize(itemSize, itemSize);
    this.img=im;
+   this.x0=100;
+   this.y0=100;
    //print("Items "+this.n+" is "+this.kind);
    } 
  
 Update(){
-    let x0=100;
-   let y0=100;
-   let x=x0+this.n*itemSize+itemSize/2;
-   let y=y0;
+   
+   let x=this.x0+this.n*itemSize+itemSize/2;
+   let y=this.y0;
    this.pos= new Point(x, y);
     
   }
@@ -84,6 +85,7 @@ Update(){
  Action(){
   if(this.kind=="pasta") {state.hp+=40; state.bowel+=20;}
   if(this.kind=="carta") state.bowel-=40;
+  if(this.kind=="pill"){ state.hp=hpmax; infected=false;}
    
  }
  
