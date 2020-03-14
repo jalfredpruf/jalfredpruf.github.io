@@ -1,11 +1,25 @@
+let sbSize;
+sbSize=34;
+
 class StateBar{
   
-   constructor(hp, bowel){
-      this.hp=1.*hp;
-      this.bowel=1.*bowel;
+   constructor(hp, bowel, sleep, hpim, bowim, sleepim){
+      this.hp=1.0*hp;
+      this.bowel=1.0*bowel;
+      this.sleep=1.0*sleep;
+      
+      this.hpim=hpim;
+      this.hpim.resize(sbSize, sbSize);
+      this.bowim=bowim;
+      this.bowim.resize(sbSize,sbSize);
+      this.sleepim=sleepim;
+      this.sleepim.resize(sbSize,sbSize);
     }
 
    Show(){
+     
+     
+     image(this.hpim, 60, 305);
        fill(125);
   rect(95, 295, 210, 50);
      fill(0);
@@ -23,7 +37,7 @@ class StateBar{
      rect(100, 300, f*200, 40);
     
   
-  
+       image(this.bowim, 60, 405);
   fill(125);
   rect(95, 395, 210, 50);
       fill(0);
@@ -38,6 +52,23 @@ class StateBar{
       
       fill(color(255*f, (1-f)*255, 0));
       rect(100, 400, f*200, 40);
+    
+    
+    image(this.sleepim, 60, 505);
+  fill(125);
+  rect(95, 495, 210, 50);
+      fill(0);
+     rect(100, 500, 200, 40);
+     
+   if(this.sleep>=sleepmax) this.sleep=sleepmax
+ 
+ if(this.sleep<0) {this.sleep=0;}
+ 
+       f=this.sleep/sleepmax;
+
+      
+      fill(color(255*f, (1-f)*255, 0));
+      rect(100, 500, f*200, 40);
     
   
   
@@ -86,6 +117,7 @@ Update(){
   if(this.kind=="pasta") {state.hp+=40; state.bowel+=20;}
   if(this.kind=="carta") state.bowel-=40;
   if(this.kind=="pill"){ state.hp=hpmax; infected=false;}
+  if(this.kind=="sonnifero") {state.sleep-=50;}
    
  }
  
