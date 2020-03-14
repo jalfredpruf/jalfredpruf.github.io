@@ -81,7 +81,7 @@ class Player {
       this.vy=2*sin(th);
     }
     this.accumx+=this.vx*dx;
-    this.accumy+=this.vx*dy;
+    this.accumy+=this.vy*dy;
     this.mex=int(this.accumx);
     this.mey=int(this.accumy);
     this.Update();
@@ -102,7 +102,7 @@ class Player {
     }
     if (this.mey>=Nx) {
       this.mey=Nx-1; 
-      this.vx=-1*this.vx;
+      this.vy=-1*this.vx;
     }
     if (this.mex<0) {
       this.mex=0; 
@@ -110,7 +110,7 @@ class Player {
     }
     if (this.mey<0) {
       this.mey=0;
-      this.vx=-1*this.vx;
+      this.vy=-1*this.vx;
     }
 
     this.pos.x=this.mex;
@@ -134,14 +134,17 @@ let trav;
 
 function preload() {
   // preload() runs once
-cool=loadImage("https://i.imgur.com/uV7pQmX.png", "png");
-train=loadImage("https://i.imgur.com/lBvflQH.png", "png");
-trav=loadImage("https://i.imgur.com/nRWWulT.png", "png");
-croce=loadImage("https://i.imgur.com/7uc3O88.png", "png");
-crocesmall=loadImage("https://i.imgur.com/7uc3O88.png", "png");
-  //train = loadImage('train.jpg');
-  //cool= loadImage('cool.jpg');
-  //trav=loadImage('trav.png');
+//cool=loadImage("https://i.imgur.com/uV7pQmX.png", "png");
+  cool=loadImage("various/cool_tr.png", "png");
+  train=loadImage("various/train_tr.png", "png");
+  trav=loadImage("various/trav_tr.png" ,"png");
+  crocesmall=loadImage("various/crocerossa_tr.png", "png");
+  croce=loadImage("various/crocerossa_tr.png", "png");
+//train=loadImage("https://i.imgur.com/lBvflQH.png", "png");
+//trav=loadImage("https://i.imgur.com/nRWWulT.png", "png");
+//croce=loadImage("https://i.imgur.com/7uc3O88.png", "png");
+//crocesmall=loadImage("https://i.imgur.com/7uc3O88.png", "png");
+
 }
 
 let win, lost;
